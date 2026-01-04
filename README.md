@@ -4,7 +4,7 @@ A Streamlit app built as a personal project to help my wife quickly decide on fo
 The app gives you **one final decision** — no re-rolls.  
 If you want a new outcome, you must refresh the page.
 
-------------------------------------------------------------
+---
 
 ## Features
 
@@ -15,14 +15,14 @@ If you want a new outcome, you must refresh the page.
 - Background changes based on activity type
 - Mobile-friendly and easy to use
 
-------------------------------------------------------------
+---
 
 ## Built with
 
 - **Python**
 - **Streamlit**
 
-------------------------------------------------------------
+---
 
 ## How to run locally
 
