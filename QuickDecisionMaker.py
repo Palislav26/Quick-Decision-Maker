@@ -1,4 +1,4 @@
-﻿import random
+import random
 import streamlit as st
 
 st.set_page_config(page_title="Quick Decision Maker", page_icon="⚡", layout="centered")
@@ -114,7 +114,7 @@ st.markdown(
     """
     <h1 style="text-align:center; line-height:1.2;">
     Desperate to decide and time is passing too quickly?<br>
-    Dont worry, The <span style="color:#6a943c;">QUICK DECISION MAKER</span> got you!
+    Dont worry, The <span style="color:#6a943c;">QUICK DECISION MAKER</span> is here for you!
     </h1>
     """,
     unsafe_allow_html=True,
@@ -134,21 +134,31 @@ if st.session_state.result is not None:
 # Step 0: BEGIN
 # ---------------------------
 if not st.session_state.started:
-    if st.button("BEGIN"):
-        st.session_state.started = True
+    col1, col2, col3 = st.columns([1, 2, 1])
+    with col2:
+        if st.button("BEGIN", use_container_width=True):
+            st.session_state.started = True
+            st.rerun()
+
     st.stop()
 
-st.write("---")
-
 # ---------------------------
-# Step 1: Outdoor vs Indoor
+# Step 1: Outdoor vs Indoor 
 # ---------------------------
 if st.session_state.mode is None:
     st.subheader("Choose a category:")
-    if st.button("🌳 Outdoor activity"):
-        st.session_state.mode = "outdoor"
-    if st.button("🏠 Indoor activity"):
-        st.session_state.mode = "indoor"
+
+    col1, col2 = st.columns(2)
+    with col1:
+        if st.button("🌳 Outdoor activity", use_container_width=True):
+            st.session_state.mode = "outdoor"
+            st.rerun()  
+
+    with col2:
+        if st.button("🏠 Indoor activity", use_container_width=True):
+            st.session_state.mode = "indoor"
+            st.rerun() 
+
     st.stop()
 
 # ---------------------------
@@ -185,4 +195,3 @@ if st.session_state.mode == "indoor":
                 st.session_state.indoor_subcategory = sub_cat
                 st.session_state.result = f"{sub_cat}: {pick_random(options)}"
                 st.rerun()
-
