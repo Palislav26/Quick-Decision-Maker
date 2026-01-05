@@ -29,3 +29,6 @@ If you want a new outcome, you must refresh the page.
 ```bash
 pip install streamlit
 streamlit run QuickDecisionMaker.py
+
+## Link to live app
+https://quick-decision-maker.streamlit.app
